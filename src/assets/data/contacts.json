@@ -1,0 +1,52 @@
+[
+    {
+        "id":1,
+        "name": "Jose",
+        "surname": "de maria gómez",
+        "description": "veterinario",
+        "sex": "hombre",
+        "email": "Jose@unomas.es",
+        "telephone": "666777888",
+        "company": "unomas"
+    },
+    {
+        "id":2,
+        "name": "Maria",
+        "surname": "Blanca Paloma",
+        "description": "Auxiliar",
+        "sex": "mujer",
+        "email": "mpa@hotmail.com",
+        "telephone": "666112233",
+        "company": ""
+    },
+    {
+      "id":3,
+      "name": "Soledad",
+      "surname": "Triste Consuelo",
+      "description": "Ecografista",
+      "sex": "mujer",
+      "email": "mpa@hotmail.com",
+      "telephone": "666112233",
+      "company": ""
+  },
+  {
+    "id":4,
+    "name": "Maria",
+    "surname": "Blanca Paloma",
+    "description": "Traumatologa",
+    "sex": "mujer",
+    "email": "mpa@hotmail.com",
+    "telephone": "666112233",
+    "company": ""
+},
+    {
+        "id":5,
+        "name": "Federico",
+        "surname": "Caballero Sánchez",
+        "description": "Veterinario",
+        "sex": "hombre",
+        "email": "fcs@gmail.es",
+        "telephone": "666123123",
+        "company": "Indra"
+    }
+]

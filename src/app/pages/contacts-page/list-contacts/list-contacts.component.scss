@@ -1,0 +1,12 @@
+#list-contacts{
+  background-color: olive;
+}
+#list-contacts .card-footer a {
+  cursor: pointer;
+
+}
+
+#list-contacts .ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden
+}
