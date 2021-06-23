@@ -1,6 +1,9 @@
 
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Subscription } from 'rxjs';
 import { Contact } from 'src/app/models/contact/contact.model';
+import { InputContact } from 'src/app/models/inputContact/input-contact';
 import { ContactService } from 'src/app/services/contact.service';
 
 @Component({
@@ -10,31 +13,12 @@ import { ContactService } from 'src/app/services/contact.service';
 })
 export class ListContactsComponent implements OnInit {
 
-  // Atributos
-  public listContacts: Contact[];
-
-  // Inyecto el servicio de ContactService
   constructor(
-    private contactService: ContactService
-  ) {
-    this.listContacts = [];
-  }
 
-  ngOnInit() {
-    // Si la lista de contactos no esta vacia, lo recuperamos
-    if(this.contactService.listContacts.length > 0){
-      this.listContacts = this.contactService.listContacts;
-    }else{
-      // Si esta vacia, lo recuperamos del fichero
-      this.contactService.getData('assets/data/contacts.json').subscribe(list => {
-        this.listContacts = list;
-      });
+    ) {}
+  
+    ngOnInit(): void {
+  
     }
-
-    console.log(this.contactService.listContacts);
-    
-
-
-  }
 
 }

@@ -1,44 +1,9 @@
-<div class="row" id="list-contacts">
-  <div class="col-12">
-
-    <div class="row">
-      <div class="col-12">
-        <h1>Lista de contactos</h1>
-      </div>
-    </div>
-
-    <!-- Solo se muestra si la lista de contactos -->
-    <ng-container *ngIf="listContacts.length > 0">
-
-      <div class="row">
-        <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4" *ngFor="let contact of listContacts;let index=index">
-
-          <!-- Carta de los contactos -->
-          <div class="card h-100">
-            <div class="card-body">
-              <!-- Info del contacto -->
-              <h4 class="card-title">{{(contact.surname + ", "+ contact.name | capitalize) +" ("+contact.sex+")"}}</h4>
-              <p class="card-text">{{contact.description}}</p>
-            </div>
-            
-          </div>
 
 
-        </div>
-      </div>
+<!-- TODO: Our List Component -->
 
-    </ng-container>
 
-    <!-- Se muestra cuando no hay contactos -->
-    <ng-container *ngIf="listContacts.length === 0">
+<!-- Button to show Example of Navigation to Contact Detail -->
 
-      <div class="row">
-        <div class="col-12">
-          <p>No hay contactos disponibles.</p>
-        </div>
-      </div>
-
-    </ng-container>
-
-  </div>
-</div>
+<button mat-raised-button color="warning" routerLink='/home'>Go Back Home</button>
+<app-contact></app-contact>

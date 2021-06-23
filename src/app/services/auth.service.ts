@@ -61,4 +61,14 @@ export class AuthService {
     console.log("estoy aqui")
     return localStorage.getItem("logged");
   }
+  register( email:string,password:string): Observable<any>{
+    let body = {
+
+      email: email,
+     password: password
+    }
+
+    return this.http.post('https://reqres.in/api/register', body)
+  
+  }
 }

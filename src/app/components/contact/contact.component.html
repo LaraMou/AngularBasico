@@ -1,1 +1,43 @@
-<p>contact works!</p>
+<app-add-contact *ngIf="contactSeleccion" [contact] ="contactSeleccion"></app-add-contact>
+<div class="card border-primary mb-3">
+  
+    <div class="card-body text-primary">
+     
+  
+  
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <!-- <th *ngIf="authService.hasRole('ROLE_USER')">#</th> -->
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>APELLIDO</th>
+            <th>EMAIL</th>
+            <th>FOTO</th>
+  
+  
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let contact of contacts">
+            <td >
+              <!-- <a [routerLink]="['/detalle/'+ experto.id]"> -->
+              {{contact.id}}
+              </td>
+            <td>{{ contact.first_name | uppercase}}</td>
+            <td>{{ contact.last_name | uppercase }}</td>
+            <td>{{contact.email}}</td>
+            
+            <img src="{{contact.avatar}}" />
+            <td ><img (click)="abrirModal(contact)" *ngIf="contact?.avatar"
+                src="{{contact.avatar}}"
+                alt="{{contact.avatar}}" class="img-thumbnail rounded"
+                style="width:64px; cursor: pointer;">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+   
+    </div>
+  </div>
+  
