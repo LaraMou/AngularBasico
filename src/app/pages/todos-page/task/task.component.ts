@@ -9,7 +9,7 @@ import { Task } from 'src/app/models/task.model';
 export class TaskComponent implements OnInit {
  // Tarea pasada
   date = new Date();
-  @Input() task: Task = new Task(this.date, '', false);
+  @Input() task: Task = new Task("","",0,"",new Date(),new Date(),false);
  // Indice de la tarea
   @Input() index: number = 0;
 

@@ -35,18 +35,24 @@ export class TodosPageComponent implements OnInit {
 
  /**
   * Añade una tarea
-  * @param description descripcion de la tarea
+  * @param titulo descripcion de la tarea
   */
- addTask(description: any) {
+ addTask(titulo: any) {
 
    // Si la descripcion existe
-   if (description) {
+   if (titulo) {
      // Creo la tarea
      // La fecha sera la actual y no estara completada
      const task: Task = {
-       'date': new Date(),
-       'description': description,
-       'completed': false
+       'id':0,
+      'titulo' :titulo,
+      'descripcion':"",
+     'urgencia': 0,
+      'responsable': "",
+      'fechaInicio' : new Date(),
+      'fechaFin' :new Date(),
+      'completed' :false
+
      };
 
      // Añado la tarea al array de tareas no completadas

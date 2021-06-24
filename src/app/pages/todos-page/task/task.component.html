@@ -1,14 +1,17 @@
 <div class="row task no-gutters mb-2">
   <!-- Fecha de la tarea -->
   <div class="col-2 block-date rounded-left">
-    {{task.date | date: 'dd MMM yyyy'}}
+    {{task.fechaInicio | date: 'dd MMM yyyy'}}
   </div>
 
   <!-- Descripcion de la tarea, varia segun si esta completada o no -->
   <div class="block-description"
     [ngClass]="{'col-8': !task.completed, 'col-10 del block-description-completed rounded-right': task.completed}"
-    [title]="task.description">
-      {{task.description}}
+    [title]="task.titulo">
+      {{task.titulo}}
+      {{task.descripcion}}
+      {{task.urgencia}}
+      {{task.responsable}}
   </div>
 
   <!-- Botones para completar o eliminar -->

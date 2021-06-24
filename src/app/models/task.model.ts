@@ -1,14 +1,25 @@
 import { Itask } from "./itask.interaface";
 
 export class Task implements Itask{
-  date: Date;
-  description: string;
-  completed: boolean;
+  id :number=0;
+  titulo:string;
+  descripcion: string;
+  urgencia: number;
+  responsable: string;
+  fechaInicio: Date;
+  fechaFin: Date;
+  completed:boolean;
 
-  constructor(date: Date, description: string, completed: boolean) {
-    this.date = date;
-    this.description = description;
-    this.completed = completed;
+  constructor(titulo: string, descripcion: string, urgencia: number, responsable: string,fechaInicio :Date,
+    fechaFin :Date,
+    completed:boolean) {
 
+      this.titulo = titulo;
+      this.descripcion = descripcion;
+      this.urgencia = urgencia;
+      this.responsable = responsable;
+      this.fechaInicio = fechaInicio;
+      this.fechaFin = fechaFin;
+      this.completed = completed;
+    }
   }
-}
