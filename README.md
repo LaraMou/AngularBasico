@@ -1,4 +1,19 @@
 # PRACTICA ANGULAR BASICO.
+## Login sucessful 
+![image](https://user-images.githubusercontent.com/73643721/123277186-2ad42b80-d506-11eb-8c0e-d88e7940960a.png)
+
+## Home
+![image](https://user-images.githubusercontent.com/73643721/123277361-548d5280-d506-11eb-9d4f-e83c9d524079.png)
+
+## ContactList
+![image](https://user-images.githubusercontent.com/73643721/123277454-6a027c80-d506-11eb-9b3f-a98d7dc4e983.png)
+
+Al hacer click en la imagen pequeña se abre el detalle del contacto
+![image](https://user-images.githubusercontent.com/73643721/123277866-c6659c00-d506-11eb-8af3-63d6ef0a66ef.png)
+
+## TaskList
+![image](https://user-images.githubusercontent.com/73643721/123278141-ff057580-d506-11eb-8013-1a44ad87c636.png)
+
 
 # AngularContacts
 
