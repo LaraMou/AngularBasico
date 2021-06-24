@@ -1,0 +1,48 @@
+<!-- Bloque cuyo atributo de color de fondo (background)
+Viene definido por lo que devuelva el método de componente
+getColor()
+-->
+<div [style.background] = "getColor()" class="alert">
+  
+    <div class="d-flex flex-row justify-content-between">
+      <div>
+        <!-- Mensaje de la tarea -->
+        <div>
+          {{tarea.titulo}}
+        </div>
+        <div>
+          {{tarea.descripcion}}
+        </div>
+        <div>
+          {{tarea.responsable}}
+        </div>
+        <!-- Fecha de la Tarea -->
+        <!-- A través de directiva *ngIf podemos ocultar o mostrar
+        la fecha de la tarea. En este caso, hemos hecho que se oculte
+        si la tarea no está completada. -->
+        <div *ngIf="tarea.completed">
+          {{tarea.fechaInicio}}
+        </div>
+      </div>
+      <!-- Botón para cambiar estado de la tarea -->
+      <!-- Usaremos la directiva ngClass para habilitar determinadas
+      clases dependiendo de si la tarea está completa o no -->
+      <!-- Una vez la tarea está completada el botón se deshabilita -->
+      <button
+        class='btn float-right'
+  
+        [ngClass]="{
+          'btn-success': tarea.completed,
+          'btn-primary': !tarea.completed
+        }"
+  
+       
+  
+        (click)="completar()">
+          {{tarea.completed ? "Completada" : "Completar"}}
+      </button>
+    </div>
+  </div>
+  
+  
+  

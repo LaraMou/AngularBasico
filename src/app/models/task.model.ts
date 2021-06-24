@@ -22,4 +22,23 @@ export class Task implements Itask{
       this.fechaFin = fechaFin;
       this.completed = completed;
     }
+     /**
+   * Método MostrarTODO
+   * Sirve para mostrar por consola los datos de un Todo
+   * @returns string
+   * Cadena de texto con los datos del Todo
+   */
+  mostrarTodo(): string {
+    return `Todo: ${this.titulo}\n¿Completada?: ${this.completed}`
+  }
+
+  /**
+   * Método Completar
+   * Sirve para cambiar el estado de una tarea de completada a no completada
+   * y viceversa
+   */
+  completar(): void {
+    this.completed = !this.completed;
+  }
+
   }

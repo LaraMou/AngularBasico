@@ -30,6 +30,7 @@ import { AddContactComponent } from './pages/contacts-page/add-contact/add-conta
 import { TaskComponent } from './pages/todos-page/task/task.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { TodoComponent } from './components/todo/todo.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     AddContactComponent,
     TaskComponent,
     HeaderComponent,
+    TodoComponent,
 
   ],
   imports: [

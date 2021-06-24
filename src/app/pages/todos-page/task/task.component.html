@@ -14,38 +14,58 @@
   </div>
 
   <!-- Conjunto de Inputs y el Botón para crear tareas -->
-  <div class="input-group">
-    <!-- Input para el mensaje de la nueva tarea -->
-    <label for="titulo">Titulo:</label>
-    <input class="form-control" name="titulo" type="text" [(ngModel)]="titulo" />
+  <div class="row">
+    <div class="col-12">
+      <div class="input-group">
+        <div class="row form-group">
+          <div class="col-md-6 col-12 form-group">
+            <!-- Input para el mensaje de la nueva tarea -->
+            <label for="titulo" class="">Titulo:</label>
+            <input class="form-control" name="titulo" type="text" placeholder="Consulta flipy" [(ngModel)]="titulo" />
+          </div>
 
-    <!-- Input para la Fecha de la nueva tarea -->
-    <label for="fecha"></label>
-    <input class="form-control" name="fecha" type="date" [(ngModel)]="fecha" />
-     <!-- Input para la Fecha de la nueva tarea -->
-     <label for="fechafin"></label>
-     <input class="form-control" name="fechafin" type="date" [(ngModel)]="fechafin" />
+          <div class="col-md-6 col-12 form-group">
+            <!-- Input para la descripcion de la nueva tarea -->
+            <label for="descripcion">Descripcion: </label>
+            <input class="form-control" name="descripcion" type="text" [(ngModel)]="descripcion" />
+          </div>
 
-    <!-- Input para Grado Importancia de la nueva tarea -->
-    <label for="grado"></label>
-    <input class="form-control" name="grado" type="number" max="4" min="0" [(ngModel)]="gradoImportancia" />
 
-    <!-- Botón para crear la tarea -->
-    <div class="input-group-append">
-      <button class="btn btn-primary" (click)="crearTarea()">
-        Crear Tarea
-      </button>
-    </div>
-  </div>
+          <div class="col-md-6 col-12 form-group">
+            <!-- Input para la responsable de la nueva tarea -->
+            <label for="responsable">Responsable: </label>
+            <input class="form-control" name="responsable" type="text" [(ngModel)]="responsable" />
+          </div>
+          <div class="col-md-6 col-12 form-group">
+            <!-- Input para la Fecha de la nueva tarea -->
+            <label for="fecha"></label>
+            <input class="form-control" name="fecha" type="date" [(ngModel)]="fecha" />
+            <!-- Input para la Fecha de la nueva tarea -->
+            <label for="fechafin"></label>
+            <input class="form-control" name="fechafin" type="date" [(ngModel)]="fechaFin" />
+          </div>
+          <div class="col-md-6 col-12 form-group">
+            <!-- Input para Grado Importancia de la nueva tarea -->
+            <label for="grado">Tipo urgencia</label>
+            <input class="form-control" name="grado" type="number" max="4" min="0" [(ngModel)]="urgencia" />
+          </div>
+        </div>
+        <!-- Botón para crear la tarea -->
+        <div class="input-group-append">
+          <button class="btn btn-primary" (click)="crearTarea()">
+            Crear Tarea
+          </button>
+        </div>
+      </div>
 
-  <!-- Lista de Tareas Pendientes -->
-  <div class="mt-2 mb-2">
-    <h4>
-      Tus tareas Pendientes
-    </h4>
-  </div>
+      <!-- Lista de Tareas Pendientes -->
+      <div class="mt-2 mb-2">
+        <h4>
+          Tus tareas Pendientes
+        </h4>
+      </div>
 
-  <!-- Listado de Tareas a través de un bucle FOR que itera
+      <!-- Listado de Tareas a través de un bucle FOR que itera
   sobre todos los elementos que hay en la lista de tareas
   y crea un TodoComponent por cada uno de ellos.
   ---------------------------------------------------------------
@@ -56,21 +76,20 @@
   * let tarea -> Variable local creada bajo el ámbito del bucle for
   * [tarea] -> el @Input del componente <app-Todo>
   -->
-  <div class="list-group">
-    <app-todo class='list-group-item'
-      *ngFor="let tarea of tareas" [tarea]="tarea"></app-todo>
-  </div>
 
-  <!-- Lista de Tareas completadas -->
-  <div class="mt-2 mb-2">
-    <h4>
-      Tus tareas Completadas
-    </h4>
-  </div>
+      <div class="list-group">
+        <app-todo class='list-group-item' *ngFor="let tarea of tareas" [tarea]="tarea"></app-todo>
+      </div>
 
-  <!-- <div class="list-group">
-    <app-todo class='list-group-item'
-      *ngFor="let tarea of tareas" [tarea]="tarea"></app-todo>
-  </div> -->
-</div>
+      <!-- Lista de Tareas completadas -->
+      <!-- <div class="mt-2 mb-2">
+        <h4>
+          Tus tareas Completadas
+        </h4>
+      </div>
 
+      <div class="list-group">
+        <app-todo class="list-group-item" *ngFor="let tarea of tareas" [tarea]="tarea"></app-todo>
+
+      </div> -->
+    </div>
