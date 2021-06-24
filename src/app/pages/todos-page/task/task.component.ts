@@ -7,40 +7,31 @@ import { Task } from 'src/app/models/task.model';
   styleUrls: ['./task.component.scss']
 })
 export class TaskComponent implements OnInit {
- // Tarea pasada
-  date = new Date();
-  @Input() task: Task = new Task(this.date, '', false);
- // Indice de la tarea
-  @Input() index: number = 0;
+  //Propiedades del componente
+  titulo: string = '';
+  descripcion:string ='';
+  responsable:string='';
+  fecha: Date = new Date();
+  fechaFin :Date = new Date();// Fecha nueva por defecto para la tarea nueva
+  urgencia: number = 4; // Grado de importancia por defecto para la tarea nueva
+  // Lista de Tareas del componente
+  tareas: Task[] = []; // Lista(Array) de Todos inicializada vacía
 
- // Evento de salida al eliminar una tarea
- @Output() remove: EventEmitter<number>;
- // Evento de salida al completar una tarea
- @Output() complete: EventEmitter<number>;
-
- // Inicializamos los outputs
-  constructor() {
-
-   this.remove = new EventEmitter<number>();
-   this.complete = new EventEmitter<number>();
- }
-
- ngOnInit() {
- }
-
+  constructor(){}
+  ngOnInit(): void {
+  }
  /**
-  * Emite un evento al componente padre para que lo elimine, le pasamos el indice de la tarea
-  */
- taskCheckedEvent() {
-   this.complete.emit(this.index);
- }
+    Sirve para crear una nueva tarea y añadirla
+   ** Método crearTarea
+   * a la lista de tareas del componente
+   */
+   crearTarea(): void {
+    // Creamos la tarea
+    let nuevaTarea = new Task(this.titulo, this.descripcion, this.urgencia,this.responsable, this.fecha,this.fechaFin, false);
+    // La añadimos al final de la lista de tareas a través de push()
+    this.tareas.push(nuevaTarea);
+  }
 
- /**
-  * Emite un evento al componente padre para que lo complete, le pasamos el indice de la tarea
-  */
- removeEvent() {
-   this.remove.emit(this.index);
- }
-
+  
 
 }

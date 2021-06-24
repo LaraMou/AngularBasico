@@ -1,47 +1,24 @@
 import { IContact } from "./icontact.interface";
 export class Contact implements IContact{
-  id: string;
-  name: string;
-  surname: string;
-  description: string;
-  sex: string;
+  id: number;
   email: string;
-  telephone: string;
-  company: string;
+  first_name: string;
+  last_name: string;
+  avatar: string;
 
-
-  constructor(
-    id: string,
-    name: string,
-    surname: string,
-    description: string,
-    sex: string,
-    email: string,
-    telephone: string,
-    company: string
-  ) {
+  constructor(id: number, email: string, first_name: string, last_name: string, avatar: string){
     this.id = id;
-    this.name = name;
-    this.surname = surname;
-    this.description = description;
-    this.sex = sex;
     this.email = email;
-    this.telephone = telephone;
-    this.company = company;
+    this.first_name = first_name;
+    this.last_name = last_name;
+    this.avatar = avatar;
   }
 
+  
 
-  /**
-   * showDetails()
-   * @returns string
-   * Contact details in string
-   */
-  // showDetails(): string {
-  //   return `Contact: ${this.first_name} ${this.last_name}
-  //   \nEmail: ${this.email}
-  //   \nPhone:${this.phone}
-  //   `
-  // }
+
+
+
 
 
 }

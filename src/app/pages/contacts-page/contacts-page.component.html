@@ -2,18 +2,23 @@
 
 <div class="row" id="schedule">
   <!-- Menu -->
-  <div class="menu col-md-1 col-12">
+  <div class="menu col-md-6 col-12 col-md-12">
     <div class="row">
       <!-- Enlace para añadir un contacto -->
       <div class="menu-item col-md-12 col-6" [routerLink]="['add-contacts']">
         <img class="img-fluid" src="assets/img/form.png" alt="">
       </div>
+      
+    </div>
+    <div class="row col-md-6 col-12">
+      <button mat-raised-button color="warning" routerLink='/home'>Go Back Home</button>
     </div>
   </div>
 
 
   <div class="content col-md-11 col-12 h-100">
-    <app-list-contacts></app-list-contacts>
+    <!-- <app-list-contacts></app-list-contacts> -->
+    <app-contact></app-contact>
 
     <!-- Segun la ruta, cargara uno u otro componente -->
     <router-outlet></router-outlet>
@@ -26,4 +31,4 @@
 <!-- Button to show Example of Navigation to Contact Detail -->
 
 <button mat-raised-button color="primary" routerLink='/home'>Go Back Home</button>
-<button mat-raised-button color="primary" routerLink='/add-contact/{{id}}' [state]="contact" >Go to Detail</button>
+

@@ -4,8 +4,8 @@ export class User implements IUser {
   email: string;
   password: string;
 
-  constructor(username: string, password: string) {
-    this.email = username;
+  constructor(email: string, password: string) {
+    this.email = email;
     this.password = password;
   }
 

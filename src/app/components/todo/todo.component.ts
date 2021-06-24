@@ -2,19 +2,23 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Task } from 'src/app/models/task.model';
 
 @Component({
-  selector: 'app-todos-page',
-  templateUrl: './todos-page.component.html',
-  styleUrls: ['./todos-page.component.scss']
+  selector: 'app-todo',
+  templateUrl: './todo.component.html',
+  styleUrls: ['./todo.component.scss']
 })
-export class TodosPageComponent implements OnInit {
- // El Input que se va a pasar desde el Padre (ListComponent)
-  // Si tuviéramos Angular Strict Mode nos obligaría adarle un valor por defecto
-  // El Input que se va a pasar desde el Padre (ListComponent)
-  // Si tuviéramos Angular Strict Mode nos obligaría adarle un valor por defecto
+export class TodoComponent implements OnInit {
+
   @Input()
   tarea!: Task; 
+   // Atributos
+ // Atributos
+  public taskListNoCompleted: any[] = [];
+ public taskListCompleted: any[] = [];
 
-  constructor() { }
+  constructor() {
+    this.taskListCompleted = [];
+    this.taskListNoCompleted = [];
+   }
 
   ngOnInit(): void {
   }
@@ -26,6 +30,16 @@ export class TodosPageComponent implements OnInit {
    */
   completar(): void {
     this.tarea.completar();
+    if(this.tarea.completed!=false){
+      this.taskListCompleted.push(this.tarea);
+      console.log(" "+this.taskListCompleted.length);
+    }
+      
+    else{
+      this.taskListNoCompleted.push(this.tarea);
+    }
+      
+  
   }
 
   /**

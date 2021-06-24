@@ -1,5 +1,10 @@
 export interface Itask {
-    'date': Date,
-    'description': string,
-    'completed': boolean
-}
+    id :number;
+    titulo:string;
+    descripcion: string;
+    urgencia: number;
+    responsable: string;
+    fechaInicio: Date;
+    fechaFin: Date;
+    completed:boolean;
+  }

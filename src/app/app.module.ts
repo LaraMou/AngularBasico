@@ -29,6 +29,8 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { AddContactComponent } from './pages/contacts-page/add-contact/add-contact.component';
 import { TaskComponent } from './pages/todos-page/task/task.component';
 import { HeaderComponent } from './components/header/header.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { TodoComponent } from './components/todo/todo.component';
 
 
 @NgModule({
@@ -49,6 +51,7 @@ import { HeaderComponent } from './components/header/header.component';
     AddContactComponent,
     TaskComponent,
     HeaderComponent,
+    TodoComponent,
 
   ],
   imports: [
@@ -64,7 +67,8 @@ import { HeaderComponent } from './components/header/header.component';
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
