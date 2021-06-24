@@ -1,23 +1,76 @@
-<div class="row task no-gutters mb-2">
-  <!-- Fecha de la tarea -->
-  <div class="col-2 block-date rounded-left">
-    {{task.fechaInicio | date: 'dd MMM yyyy'}}
-  </div>
-
-  <!-- Descripcion de la tarea, varia segun si esta completada o no -->
-  <div class="block-description"
-    [ngClass]="{'col-8': !task.completed, 'col-10 del block-description-completed rounded-right': task.completed}"
-    [title]="task.titulo">
-      {{task.titulo}}
-      {{task.descripcion}}
-      {{task.urgencia}}
-      {{task.responsable}}
-  </div>
-
-  <!-- Botones para completar o eliminar -->
-  <div *ngIf="!task.completed" class="col-2 block-actions rounded-right text-right">
-    <i class="icon-action fa fa-check text-success" (click)="taskCheckedEvent()"></i>
-    <i class="icon-action fa fa-remove text-danger" (click)="removeEvent()"></i>
-  </div>
-
+<div>
+  <h2>
+    Tareas
+  </h2>
 </div>
+
+<div>
+
+  <!-- Campos del Formulario -->
+  <div class="mt-2 mb-2">
+    <h4>
+      Formulario
+    </h4>
+  </div>
+
+  <!-- Conjunto de Inputs y el Botón para crear tareas -->
+  <div class="input-group">
+    <!-- Input para el mensaje de la nueva tarea -->
+    <label for="titulo">Titulo:</label>
+    <input class="form-control" name="titulo" type="text" [(ngModel)]="titulo" />
+
+    <!-- Input para la Fecha de la nueva tarea -->
+    <label for="fecha"></label>
+    <input class="form-control" name="fecha" type="date" [(ngModel)]="fecha" />
+     <!-- Input para la Fecha de la nueva tarea -->
+     <label for="fechafin"></label>
+     <input class="form-control" name="fechafin" type="date" [(ngModel)]="fechafin" />
+
+    <!-- Input para Grado Importancia de la nueva tarea -->
+    <label for="grado"></label>
+    <input class="form-control" name="grado" type="number" max="4" min="0" [(ngModel)]="gradoImportancia" />
+
+    <!-- Botón para crear la tarea -->
+    <div class="input-group-append">
+      <button class="btn btn-primary" (click)="crearTarea()">
+        Crear Tarea
+      </button>
+    </div>
+  </div>
+
+  <!-- Lista de Tareas Pendientes -->
+  <div class="mt-2 mb-2">
+    <h4>
+      Tus tareas Pendientes
+    </h4>
+  </div>
+
+  <!-- Listado de Tareas a través de un bucle FOR que itera
+  sobre todos los elementos que hay en la lista de tareas
+  y crea un TodoComponent por cada uno de ellos.
+  ---------------------------------------------------------------
+    *ngFor -> Es la directiva Estructural que nos permite pintar
+      varias veces un mismo elemento a la que iteramos una lista de elementos
+  ---------------------------------------------------------------
+  * tareas -> Lista de Tareas en el Componente iterada con el bucle for
+  * let tarea -> Variable local creada bajo el ámbito del bucle for
+  * [tarea] -> el @Input del componente <app-Todo>
+  -->
+  <div class="list-group">
+    <app-todo class='list-group-item'
+      *ngFor="let tarea of tareas" [tarea]="tarea"></app-todo>
+  </div>
+
+  <!-- Lista de Tareas completadas -->
+  <div class="mt-2 mb-2">
+    <h4>
+      Tus tareas Completadas
+    </h4>
+  </div>
+
+  <!-- <div class="list-group">
+    <app-todo class='list-group-item'
+      *ngFor="let tarea of tareas" [tarea]="tarea"></app-todo>
+  </div> -->
+</div>
+
